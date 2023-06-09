@@ -17,14 +17,21 @@ public class Flat implements Home {
         return area + balconyArea;
     }
 
-    @Override
-    public int compareTo() {
-        return 0;
-    }
+
 
     @Override
-    public String toString() {
-        return "Flat{}";
+    public int compareTo(Home another) {
+        if (this.getArea() > another.getArea()) {
+            return 1;
+        } else if (this.getArea() < another.getArea()) {
+            return -1;
+        }else {
+            return 0;
+    }
+            @Override
+        public String toString() {
+            return "Квартира площадью " + getArea() + " метров на " + floor + " этаже";
+        }
     }
 }
 // END
