@@ -10,16 +10,19 @@ public class Segment {
         this.end = end;
     }
 
-    public Point getBegin() {
+    public Point getBeginPoint() {
         return begin;
     }
 
-    public Point getEnd() {
+    public Point getEndPoint() {
         return end;
     }
 
-    public Point getMid() {
-        return getMid;
+    public Point getMidPoint() {
+       int midX = (begin.getX() + end.getX()) / 2;
+       int midY = (begin.getY() + end.getY()) / 2;
+
+        return new Point(midX, midY);
     }
 }
 
