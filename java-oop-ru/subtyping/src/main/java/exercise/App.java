@@ -14,7 +14,13 @@ public class App {
             newData.put(value, key);
         }
         kv.toMap().clear();
-
+        Map<String, String> newData = new HashMap<>();
+        for (String key : kv.toMap().keySet()) {
+            String value = kv.get(key, "");
+            newData.put(value, key);
+        }
+        kv.toMap().clear();
+        kv.toMap().putAll(newData);
     }
 }
 // END
