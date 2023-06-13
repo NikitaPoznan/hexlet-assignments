@@ -14,7 +14,7 @@ public class App {
             newData.put(value, key);
         }
         kv.toMap().clear();
-        kv.toMap().putAll(newData);
+
     }
 }
 // END
