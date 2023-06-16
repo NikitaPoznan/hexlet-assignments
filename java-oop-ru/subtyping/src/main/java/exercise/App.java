@@ -9,12 +9,14 @@ import java.util.Set;
 public class App {
     public static void swapKeyValue(KeyValueStorage kv) {
         Map<String, String> newData = new HashMap<>();
-        for (String key : kv.toMap().keySet()) {
-            String value = kv.get(key, "");
-            newData.put(value, key);
+        var changeMap = kv.toMap();
+
+        for (String key : changeMap.keySet()) {
+            kv.unset(key);
         }
-        kv.toMap().clear();
-        kv.toMap().putAll(newData);
+        for (Entry<String, String> entry : changeMap.entrySet()) {
+            kv.set(entry.getValue(), entry.getKey());
+        }
     }
 }
 // END
